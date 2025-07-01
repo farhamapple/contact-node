@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    container_name: contact-node-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    environment:
+      DB_HOST: host.docker.internal
+      DB_USER: root
+      DB_PASSWORD: ""
+      DB_NAME: contact_app
+    restart: unless-stopped
